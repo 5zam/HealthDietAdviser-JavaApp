@@ -1,33 +1,35 @@
 package com.example.HealthDiet.Adviser.HealthDiet.Models;
 
 
+/*
+ * admin add food to specific category
+ */
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
-/*
- * admin can add more than one category
- */
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="tbl_category")
-public class Category {
+@Table(name="tbl_admin")
+public class Food {
 
-    //all attributes in category table
+    //all attributes in food table
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     private String name;
 
-    //each category has many food items
-    @OneToMany(mappedBy = "category")
-    private List<Food> foods;
+    private String description;
+
+    //each food has to be in specific category
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 }
