@@ -1,10 +1,6 @@
 package com.example.HealthDiet.Adviser.HealthDiet.Models;
 
 
-/*
- * admin add food to specific category
- */
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,18 +14,16 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "tbl_Meal")
+@Table(name = "tbl_chronic_diseases")
+public class ChronicDisease {
 
-public class Meal {
-
-    //all attributes in Meal table
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long mealId;
+    private long diseaseId;
 
-    private String mealName;
+    private String diseaseName;
 
-    @ManyToOne
-    @JoinColumn(name = "diet_prescription_id")
-    private DietPrescription dietPrescription;
+
+    @OneToMany(mappedBy = "chronicDisease")
+    private List<DietPrescription> dietPrescriptions;
 }
