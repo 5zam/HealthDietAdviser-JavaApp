@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Objects;
 
 /*
  * Here we have the child class - admin
@@ -16,15 +17,13 @@ import java.util.List;
 @Setter
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
-@Table(name="tbl_admin")
 public class Admin extends Person{
     //Admin attributes:
-    @Id
-    private long id;
+    //private String adminAdditionalField; never use
 
-    @OneToMany(mappedBy = "admin", cascade = CascadeType.ALL)
-    private List<Category> categories;
+    //yes admin can add categories but now no need to implement it.
+//    @OneToMany(mappedBy = "admin", cascade = CascadeType.ALL)
+//    private List<Category> categories;
 
 }

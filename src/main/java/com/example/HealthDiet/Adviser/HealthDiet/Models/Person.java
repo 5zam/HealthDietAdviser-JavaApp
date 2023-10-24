@@ -15,7 +15,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+//@Inheritance(strategy = InheritanceType.JOINED)------change to single table
+@Table(name = "tbl_person")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Person {
     //Person attributes:
     @Id

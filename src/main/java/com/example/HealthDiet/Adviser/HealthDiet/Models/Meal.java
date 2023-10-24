@@ -16,15 +16,17 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="tbl_admin")
-public class Food {
+@Table(name = "tbl_Meal")
+public class Meal {
 
     //all attributes in food table
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String mealName;
+
+    private double mealAmount;
 
     private String description;
 

@@ -10,7 +10,7 @@ import lombok.Setter;
 import java.util.List;
 
 /*
- * admin can add more than one category
+ * related Category
  */
 @Setter
 @Getter
@@ -25,9 +25,16 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String name;
+    private String CategoryName;
+
+    //admin can add more than one category- no need to add now
+//    @ManyToOne
+//    @JoinColumn(name = "admin_id")
+//    private Admin admin;
 
     //each category has many food items
+    // Relationships
     @OneToMany(mappedBy = "category")
-    private List<Food> foods;
+    private List<Meal> meals;
+
 }
