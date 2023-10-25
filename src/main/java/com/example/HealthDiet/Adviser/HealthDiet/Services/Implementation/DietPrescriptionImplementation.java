@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DietPrescriptionImplementation implements DietPrescriptionInterface {
@@ -22,5 +23,20 @@ public class DietPrescriptionImplementation implements DietPrescriptionInterface
     @Override
     public List<DietPrescription> showAllDietPrescription() {
         return dietPrescriptionRepository.findAll();
+    }
+
+    @Override
+    public String updateDietPrescription(Long id, DietPrescription dietPrescription) {
+        Optional<DietPrescription> PrescriptionFound = dietPrescriptionRepository.findById(id);
+        if (PrescriptionFound.isPresent()) {
+            dietPrescription.setMealAmount(dietPrescription.getMealAmount());
+            dietPrescription.setMeal(dietPrescription.getMeal());
+            dietPrescription.setChronicDisease(dietPrescription.getChronicDisease());
+            dietPrescriptionRepository.save(dietPrescription);
+            return "diet Prescription Updated";
+        }
+        else {
+            return " Sorry, Not Found";
+        }
     }
 }

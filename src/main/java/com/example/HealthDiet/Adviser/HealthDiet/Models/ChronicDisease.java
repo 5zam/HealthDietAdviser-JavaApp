@@ -19,8 +19,10 @@ public class ChronicDisease {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long diseaseId;
+    private Long diseaseId;
 
+
+    @Column(name = "diseaseName")
     private String diseaseName;
 
 

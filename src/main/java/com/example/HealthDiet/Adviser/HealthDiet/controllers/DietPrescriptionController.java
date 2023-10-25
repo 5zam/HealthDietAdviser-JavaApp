@@ -45,6 +45,12 @@ public class DietPrescriptionController {
         return dietPrescriptionImplementation.showAllDietPrescription();
     }
 
+    @PutMapping("/update/{id}")
+    public String updateDietPrescription(@PathVariable Long id, @RequestBody DietPrescription dietPrescription) {
+        return dietPrescriptionImplementation.updateDietPrescription(id, dietPrescription);
+    }
+
+
     //add many categories in sametime
 
 }

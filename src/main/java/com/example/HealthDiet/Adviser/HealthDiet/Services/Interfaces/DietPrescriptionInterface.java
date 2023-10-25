@@ -8,4 +8,6 @@ public interface DietPrescriptionInterface {
     void addDietPrescription(DietPrescription category);
 
     List<DietPrescription> showAllDietPrescription();
+
+    String updateDietPrescription(Long id, DietPrescription dietPrescription);
 }
