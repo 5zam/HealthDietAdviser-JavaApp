@@ -6,9 +6,11 @@ import com.example.HealthDiet.Adviser.HealthDiet.Models.Meal;
 import java.util.List;
 
 public interface MealInterface {
-    void addMeal(Meal meal);
+//    void addMeal(Meal meal);
+//
+//    List<Meal> showAllMeals();
+//
+//    List<Meal> addAllMeals(List<Meal> meals);
 
-    List<Meal> showAllMeals();
-
-    List<Meal> addAllMeals(List<Meal> meals);
+//    List<Meal> getMealsByDiseaseName(String diseaseName);
 }

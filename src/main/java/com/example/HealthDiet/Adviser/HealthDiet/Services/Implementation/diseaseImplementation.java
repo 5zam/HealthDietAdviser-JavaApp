@@ -17,39 +17,46 @@ public class diseaseImplementation implements diseaseInterface {
  @Autowired
     private ChronicDiseaseRepository chronicDiseaseRepository;
 
-    @Override
-    public void addDisease(ChronicDisease chronicDisease) {
-        chronicDiseaseRepository.save(chronicDisease);
-    }
-
-    @Override
-    public List<ChronicDisease> showAllChronicDisease() {
-        return chronicDiseaseRepository.findAll();
-    }
-
-    @Override
-    public void deleteDiseases(Long diseaseId) {
-        Optional<ChronicDisease> existingDisease = chronicDiseaseRepository.findById(diseaseId);
-        if (existingDisease.isPresent()) {
-            chronicDiseaseRepository.deleteById(diseaseId);
-        } else {
-            throw new EntityNotFoundException("Disease with ID " + diseaseId + " not found");
-    }
-    }
-    @Override
-    public String removeDisease(String diseaseName) {
-        try {
-            if (chronicDiseaseRepository.existsByDiseaseName(diseaseName)) {
-                chronicDiseaseRepository.deleteByDiseaseName(diseaseName);
-                return "Deleted";
-            } else {
-                return "not found!";
-            }
-        } catch (Exception e) {
-            // Handle unexpected exceptions here
-            return "An error occurred: " + e.getMessage();
-        }
-    }
 
 
-}
+//    @Override
+//    public void addDisease(ChronicDisease chronicDisease) {
+//        chronicDiseaseRepository.save(chronicDisease);
+//    }
+//
+//    @Override
+//    public List<ChronicDisease> showAllChronicDisease() {
+//        return chronicDiseaseRepository.findAll();
+//    }
+
+//    @Override
+//    public void deleteDiseases(Long diseaseId) {
+//        Optional<ChronicDisease> existingDisease = chronicDiseaseRepository.findById(diseaseId);
+//        if (existingDisease.isPresent()) {
+//            chronicDiseaseRepository.deleteById(diseaseId);
+//        } else {
+//            throw new EntityNotFoundException("Disease with ID " + diseaseId + " not found");
+//    }
+//    }
+
+
+//    @Override
+//    public String removeDisease(String diseaseName) {
+//        try {
+//            if (chronicDiseaseRepository.existsByDiseaseName(diseaseName)) {
+//                chronicDiseaseRepository.deleteByDiseaseName(diseaseName);
+//                return "Deleted";
+//            } else {
+//                return "not found!";
+//            }
+//        } catch (Exception e) {
+//            // Handle unexpected exceptions here
+//            return "An error occurred: " + e.getMessage();
+//        }
+
+
+
+} /** End of class */
+
+
+

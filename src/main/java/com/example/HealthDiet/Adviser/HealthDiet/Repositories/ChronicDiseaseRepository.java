@@ -10,13 +10,14 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ChronicDiseaseRepository extends JpaRepository<ChronicDisease, Long> {
-//    boolean existsByDiseaseName(String diseaseName);
-//
-//    void deleteByDiseaseName(String diseaseName);
+
 
     boolean existsByDiseaseName(String diseaseName);
     @Transactional
     @Modifying
     @Query("DELETE FROM ChronicDisease c WHERE c.diseaseName = :diseaseName")
     void deleteByDiseaseName(@Param("diseaseName") String diseaseName);
+
+    ChronicDisease findByDiseaseName(String diseaseName);
+
 }

@@ -22,14 +22,28 @@ import java.util.List;
 
 public class Meal {
 
-    //all attributes in Meal table
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long mealId;
 
     private String mealName;
 
-    @ManyToOne
-    @JoinColumn(name = "diet_prescription_id")
-    private DietPrescription dietPrescription;
+    @OneToMany(mappedBy = "meal",fetch = FetchType.EAGER)
+    private List<DietPrescription> dietPrescriptions;
+
+    ////////////////////////////////////backup1/////////////////
+    //all attributes in Meal table
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long mealId;
+//
+//    private String mealName;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "diet_prescription_id")
+//    private DietPrescription dietPrescription;
+
+//    @ManyToOne
+//    @JoinColumn(name = "chronic_disease_id")
+//    private ChronicDisease chronicDisease;
 }

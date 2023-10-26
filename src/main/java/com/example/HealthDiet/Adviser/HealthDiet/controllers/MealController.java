@@ -17,46 +17,52 @@ public class MealController {
     @Autowired
     private MealImplementation mealImplementation;
 
-    @PostMapping("/addManyMeals")
-    public ResponseEntity<String> addAll(@RequestBody List<Meal> meals) {
-        try {
-            List<Meal> addedMeals = mealImplementation.addAllMeals(meals);
-            String message = addedMeals.size() + " meals added successfully!";
-            return ResponseEntity.status(HttpStatus.OK).body(message);
-        } catch (Exception e) {
-            String errorMessage = "Error adding meals: " + e.getMessage();
-           return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage);
-        }
-    }
-
-
-    @PostMapping("/addMeal")
-    public ResponseEntity<String> addMeal(@RequestBody @Valid Meal meal) {
-        try {
-            mealImplementation.addMeal(meal);
-            String message = "Meal added successfully!";
-
-            // Return the response status and the message in the body
-            return ResponseEntity.status(HttpStatus.OK).body(message);
-        }
-        catch (Exception e) {
-            // Saving the error message in a variable and using getMessage method
-            // to get detailed error message from the Exception class
-            String errorMessage = "Error adding meal: " + e.getMessage();
-            // Return the response status and the error message in the body
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage);
-        }
-    }
-
+    /**
+     ** addManyMeals, add meal , show meal:
+    */
 //    @PostMapping("/addManyMeals")
-//    public List<Meal> addAllMeals(@RequestBody List<Meal> meal){
-//        return mealImplementation.addAllMeals(meal);
+//    public ResponseEntity<String> addAll(@RequestBody List<Meal> meals) {
+//        try {
+//            List<Meal> addedMeals = mealImplementation.addAllMeals(meals);
+//            String message = addedMeals.size() + " meals added successfully!";
+//            return ResponseEntity.status(HttpStatus.OK).body(message);
+//        } catch (Exception e) {
+//            String errorMessage = "Error adding meals: " + e.getMessage();
+//           return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage);
+//        }
 //    }
 
-    @GetMapping("/showMeals")
-    @ResponseStatus(HttpStatus.OK)
-    public List<Meal> showAllMeals(){
-        return mealImplementation.showAllMeals();
-    }
+
+//   @PostMapping("/addMeal")
+//    public ResponseEntity<String> addMeal(@RequestBody @Valid Meal meal) {
+//        try {
+//            mealImplementation.addMeal(meal);
+//            String message = "Meal added successfully!";
+//
+//            // Return the response status and the message in the body
+//            return ResponseEntity.status(HttpStatus.OK).body(message);
+//        }
+//        catch (Exception e) {
+//            // Saving the error message in a variable and using getMessage method
+//            // to get detailed error message from the Exception class
+//            String errorMessage = "Error adding meal: " + e.getMessage();
+//            // Return the response status and the error message in the body
+//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage);
+//        }
+//    }
+
+
+//    @GetMapping("/showMeals")
+//    @ResponseStatus(HttpStatus.OK)
+//    public List<Meal> showAllMeals(){
+//        return mealImplementation.showAllMeals();
+//    }
+
+
+//    @GetMapping("/byDiseaseName/{diseaseName}")
+//    public ResponseEntity<List<Meal>> getMealsByDiseaseName(@PathVariable String diseaseName) {
+//        List<Meal> meals = mealImplementation.getMealsByDiseaseName(diseaseName);
+//        return ResponseEntity.ok(meals);
+//    }
 
 }
