@@ -30,3 +30,7 @@
     * PUT / update information (http://localhost:8080/DietPrescriptions/update/2)
     * GET / show meals by Disease Name(http://localhost:8080/byDiseaseName/Crestrol)
 
+### 🔗 Additional Lifelines
+#### Project Management with Trello: 🔗 [Trello Board](https://trello.com/invite/b/Fd8jkju3/ATTI2bf18e5b7e7e3f5b43192b47af23d343037D2B1A/teaching-weekly-planning)
+#### Slide Presentation [Link](https://www.canva.com/design/DAFyV5RY5tU/UOqnR6sD1A7pUoy4VFychg/edit?utm_content=DAFyV5RY5tU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
