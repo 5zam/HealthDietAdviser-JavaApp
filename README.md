@@ -9,5 +9,5 @@
 ![Health Diet Adviser class diagram](https://github.com/5zam/HealthDietAdviser-JavaApp/assets/146082269/d044232d-0c0f-4c2f-a02d-d351f22d4ab9)
 
 ### 🛠 Setup & Installation
-#### Clone the Repository:
+#### Clone the Repository: [HealthDietAdviser Application](https://github.com/5zam/HealthDietAdviser-JavaApp.git)
 
